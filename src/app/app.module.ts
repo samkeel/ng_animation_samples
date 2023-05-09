@@ -13,6 +13,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CardListComponent } from './shared/components/card-list/card-list.component';
 import {MatCardModule} from '@angular/material/card';
+import { CardComponent } from './shared/components/card/card.component';
+import { BpObserverService } from './shared/services/bp-observer.service';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import {MatCardModule} from '@angular/material/card';
     ButtonsComponent,
     HeaderComponent,
     CardListComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [ BpObserverService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

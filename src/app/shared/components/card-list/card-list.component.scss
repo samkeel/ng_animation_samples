@@ -1,17 +1,14 @@
-:host {
-  display: block;
-}
-
-.main-card-section {
+.notes-cards-list {
   padding: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   &.handset-portait {
     grid-template-columns: 1fr;
   }
+  row-gap: 1em;
 }
 
-.main-card {
+.list-card {
   grid-column-start: 2;
   grid-column-end: span 5;
 
