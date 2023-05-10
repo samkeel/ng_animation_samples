@@ -1,12 +1,12 @@
 <section
   class="notes-cards-list"
   [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
+  [@staggerListAnimation]
 >
   <div
-    *ngFor="let card of displayedCards; let i = index"
+    *ngFor="let card of cards; let i = index"
     class="list-card mat-elevation-z4"
     [ngClass]="{ 'handset-portait': isHandsetPortrait$ | async }"
-    @itemState    
   >
     <app-card
       title="{{ card.title }}"

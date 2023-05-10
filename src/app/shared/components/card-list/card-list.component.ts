@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { BpObserverService } from '../../services/bp-observer.service';
 import { Observable } from 'rxjs';
 import { CardModel } from '../../models/card-model';
-import { itemStateTrigger } from '../../animations/staggered-list.animation';
+import { staggerListAnimation } from '../../animations/staggered-list.animation';
 
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.scss'],
-  animations: [ itemStateTrigger]
+  animations: [ staggerListAnimation]
 })
 export class CardListComponent implements OnInit {
   isHandsetPortrait$: Observable<boolean> = this.bpoService.HandsetPortrait$;
-  displayedCards: CardModel[] = [];
+  // displayedCards: CardModel[] = [];
 
   cards: CardModel[] = [
     {
@@ -35,17 +35,17 @@ export class CardListComponent implements OnInit {
   constructor(private bpoService: BpObserverService) {}
 
   ngOnInit() {
-    this.displayedCards.push(this.cards[0]);
+    // this.displayedCards.push(this.cards[0]);
   }
 
-  onItemAnimated(animationEvent: AnimationEvent, lastId: number) {
-    // if (animationEvent != 'void') {
-    //   return;
-    // }
-    if (this.cards.length > lastId + 1) {
-      this.displayedCards.push(this.cards[lastId + 1]);
-    } else {
-      this.cards = this.displayedCards;
-    }
-  }
+  // onItemAnimated(animationEvent: AnimationEvent, lastId: number) {
+  //   // if (animationEvent != 'void') {
+  //   //   return;
+  //   // }
+  //   if (this.cards.length > lastId + 1) {
+  //     this.displayedCards.push(this.cards[lastId + 1]);
+  //   } else {
+  //     this.cards = this.displayedCards;
+  //   }
+  // }
 }
